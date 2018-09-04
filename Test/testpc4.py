@@ -1,12 +1,10 @@
-import urllib.request
+import pandas as PD
+import json 
+F=PD.DataFrame()
 
-URL = 'https://reverse.geocoder.cit.api.here.com/6.2/reversegeocode.json?prox=%s,%s,250&mode=retrieveAddresses&maxresults=1&gen=8&app_id=ZsYKZLBuY8QOl4o4t0of&app_code=7x3y_gVqiF2DeHpodgoY7w'
+A=json.loads({"accountId":"550469","householdId":"550452","STB":{"manufacturer":"Xfinity","model":"XG1-P","deviceType":"Pvr","globalDeviceId":"234124"},"location":{"zipCode":"48301","locale":"en-US"},"tvService":{"tivo":{"msoName":"Comcast Cable Communications","channelLineupName":"Bloomfield - Comcast","serviceType":"Cable","location":"Bloomfield"},"gracenote":{"searchResult":{"data":{"searchServices":[{"id":"USA-MI21590-X","msoId":"08010","msoName":"Comcast Corporation","image":"https://d24yvwqlwu34qp.cloudfront.net/images/service/{size}/us-comcast.png","name":"Comcast - Digital","type":"CABLE","location":"Birmingham","recommended":true},{"id":"USA-OTA48301","msoId":null,"msoName":null,"image":null,"name":"Local Over the Air Broadcast","type":"OTA","location":null,"recommended":null},{"id":"USA-MI66566-X","msoId":"17304","msoName":"AT&T U-verse TV","image":"https://d24yvwqlwu34qp.cloudfront.net/images/service/{size}/us-at&t.png","name":"AT&T U-verse TV - Digital","type":"CABLE","location":"Detroit","recommended":null},{"id":"USA-DISH505-DEFAULT","msoId":"17680","msoName":"Dish Network, LLC","image":null,"name":"DISH Detroit - Satellite","type":"SATELLITE","location":"Detroit","recommended":null},{"id":"USA-DITV505-DEFAULT","msoId":"17580","msoName":"DIRECTV","image":"https://d24yvwqlwu34qp.cloudfront.net/images/service/{size}/us-directv.png","name":"DIRECTV Detroit - Satellite","type":"SATELLITE","location":"Detroit","recommended":null},{"id":"USA-DITV-DEFAULT","msoId":"17580","msoName":"DIRECTV","image":"https://d24yvwqlwu34qp.cloudfront.net/images/service/{size}/us-directv.png","name":"DIRECTV - Satellite","type":"SATELLITE","location":"USA","recommended":null},{"id":"USA-C-BAND-DEFAULT","msoId":null,"msoName":null,"image":null,"name":"C-Band - Satellite","type":"SATELLITE","location":"USA","recommended":null},{"id":"USA-ECHOST-DEFAULT","msoId":"17680","msoName":"Dish Network, LLC","image":null,"name":"DISH Network - Satellite","type":"SATELLITE","location":"USA","recommended":null},{"id":"USA-AFN-DEFAULT","msoId":null,"msoName":null,"image":null,"name":"AFN Satellite - Satellite","type":"SATELLITE","location":"USA","recommended":null},{"id":"USA-RELAYTV-DEFAULT","msoId":"17815","msoName":"LiveRelayTV","image":null,"name":"RELAYTV - Satellite","type":"SATELLITE","location":"USA","recommended":null},{"id":"USA-GLRYSTR-DEFAULT","msoId":null,"msoName":null,"image":null,"name":"GLRYSTR - Satellite","type":"SATELLITE","location":"USA","recommended":null}]}},"recommended":[{"id":"USA-MI21590-X","msoId":"08010","msoName":"Comcast Corporation","image":"https://d24yvwqlwu34qp.cloudfront.net/images/service/{size}/us-comcast.png","name":"Comcast - Digital","type":"CABLE","location":"Birmingham","recommended":true}]}}})
 
-req = urllib.request.Request(URL % (51.1, 17.0333))
-response = urllib.request.urlopen(req).read()  # .decode('utf-8')
-print(response)
-print('******************************************')
 
-res = urllib.request.urlopen(URL % (51.1, 17.0333)).read()
-print(res)
+E=PD.DataFrame.from_dict()
+
 
